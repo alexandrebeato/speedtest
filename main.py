@@ -5,11 +5,13 @@ from pandas import DataFrame
 import os
 clear = lambda: os.system('cls')
 
-table_headers = ["Datetime", "Server ID", "Server Name", "Latency", "Download Speed", "Upload Speed"]
+table_headers = ["Datetime", "Server ID", "Server Name", "Latency", "Download Mbps", "Upload Mbps"]
 table_data = []
 is_loading = False
 
 clear()
+
+print("Speedtest is running...")
 
 while True:
     if is_loading:
