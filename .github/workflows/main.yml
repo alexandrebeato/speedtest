@@ -25,18 +25,12 @@ jobs:
         pip install pyinstaller  # Install PyInstaller for creating the executable.
 
     - name: Build the .exe with PyInstaller
-      run: pyinstaller --onefile main.py 
-
-    - name: Rename executable
-      run: |
-        $exePath = "dist\main.exe"
-        $newExePath = "dist\speedtest.exe"
-        Rename-Item $exePath $newExePath
+      run: pyinstaller --onefile main.py
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v2
       with:
-        name: your-app-exe
+        name: main
         path: dist/*.exe  # Uploads the built .exe from the dist folder.
 
   release:
