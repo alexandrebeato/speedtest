@@ -45,9 +45,19 @@ jobs:
         name: main
         path: dist
 
+    - name: Create Tag
+      id: create_tag
+      run: |
+        echo "::set-output name=tag::v1.0.${{ github.run_id }}"
+        git tag v1.0.${{ github.run_id }}
+
+    - name: Push Tag
+      run: git push origin ${{ steps.create_tag.outputs.tag }}
+
     - name: Create Release
       uses: softprops/action-gh-release@v1
       with:
         files: dist/*.exe
+        tag_name: ${{ steps.create_tag.outputs.tag }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # This token is provided by Actions, no need to create one.
