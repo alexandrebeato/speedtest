@@ -1,6 +1,6 @@
 # Speed test automation
 
-This is a simple script to automate the speed test using the speedtest-cli library. Download the executable file from releases and run it. The script will run the speed test and save the results in a CSV file in the same directory.
+This is a simple script to automate the speed test using the speedtest-cli library. Download the executable file from [releases](https://github.com/alexandrebeato/speedtest/releases) and run it. The script will run the speed test and save the results in a CSV file in the same directory.
 
 ## Building the executable
 
