@@ -8,7 +8,7 @@ First of all, create an virtual environment and install the dependencies:
 
 ```bash
 py -m venv speedtest
-source speedtest/Scripts/activate
+speedtest\Scripts\activate
 pip install -r requirements.txt
 ```
 
